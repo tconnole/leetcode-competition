@@ -1,10 +1,90 @@
 /* Your styles goes here. */
+$header-height: 100px;
+
 .app {
     height: 100vh;
     width: 100vw;
-    background-image: linear-gradient(to bottom right, rgb(145, 62, 161), rgb(36, 80, 131));
+    position: relative;
+    overflow: hidden;
+
+
+    .container {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+
+        .header {
+            position: relative;
+            height: $header-height;
+            width: 1080px;
+            max-width: 90%;
+            padding-left: 5%;
+            padding-right: 5%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .body {
+            margin-top: 150px;
+            width: 1200px;
+            max-width: 90%;
+            padding-left: 5%;
+            padding-right: 5%;
+            height: calc(100% - $header-height);
+            overflow: auto;
+        }
+    }
+    .background {
+        position: fixed;
+        min-height: 400vh;
+        width: 100%;
+        transition: all 1s cubic-bezier(.54,.78,.5,1.08);;
+
+        .tab {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+
+            .header {
+                height: $header-height;
+                width: 100vw;
+                position: absolute;
+                top: 0;
+
+                .wave {
+                    position: absolute;
+                    width: 102%;
+                    right: -1%;
+                    top: 100%;
+                }
+            }
+        }
+    }
+}
+
+.app-list-full {
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    overflow: auto;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.app-list-small {
+    display: none;
+}
+
+@media (max-width: 990px) {
+        .app-list-full {
+            display: none;
+        }
+    
+        .app-list-small {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
 }

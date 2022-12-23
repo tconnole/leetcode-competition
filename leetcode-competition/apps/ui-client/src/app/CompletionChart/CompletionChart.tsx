@@ -1,3 +1,4 @@
+import { GridItem, status } from '../app.model';
 import styles from './CompletionChart.module.scss';
 
 /* eslint-disable-next-line */
@@ -6,42 +7,37 @@ export interface CompletionChartProps {
   gridItems: GridItem[];
 }
 
-export interface GridItem {
-  day: number;
-  leetcodeHREF?: string;
-  language?: string;
-  runtime?: number;
-  memory?: number;
-  status: status
-}
-export type status = 'completed' | 'failed' | 'not attempted';
-
 export function CompletionChart(props: CompletionChartProps) {
 
+  const currentDay = 315;
+  const opacity = (day: number, status: status, runtime?: number, memory?: number) => {
+    if (status === 'completed' && day < currentDay) {
+      return (((runtime ?? 0) + (memory ?? 0)) / 2) + 0.2;
+    }
+    return 1;
+  }
 
   const generateColor = (status: status, day: number) => {
     // TODO add logic to calculate day
-    if (day > 256) {
-      console.log( new Date().getDay());
+    if (day > currentDay) {
       return '';
-      
     }
     switch(status) {
       case 'completed':
-        return '#0b9e32';
+        return '#ffffff';
       case 'failed':
         return '';
       case 'not attempted':
-       return '#cc123e';
+      //  return '#cc123e';
+      return '#000000';
     }
   }
 
   return (
     <div className={styles['container']}>
-      <div style={{width: '100%', padding: '0.25rem', textAlign: 'center'}}>{props.name}</div>
       {
         props.gridItems.map(item => 
-          <div className={styles['grid-item']} style={{backgroundColor: generateColor(item.status, item.day)}}>
+          <div className={styles['grid-item']} style={{backgroundColor: generateColor(item.status, item.day), opacity: opacity(item.day, item.status, item.runtimePercentile, item.memoryPercentile)}}>
             <div className={styles['info-card']}></div>
           </div>
           )

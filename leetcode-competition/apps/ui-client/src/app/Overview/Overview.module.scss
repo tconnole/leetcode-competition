@@ -1,0 +1,121 @@
+/*
+ * Replace this with your own classes
+ *
+ * e.g.
+ * .container {
+ * }
+*/
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 2rem;
+    min-height: calc(100% - 2rem);
+    position: relative;
+    overflow: hidden;
+
+    .profile-container, .profile-container-2 {
+        opacity: 1;
+        width: 500px;
+        height: 800px;
+        padding: 2rem;
+        animation: 1s ease-out appear;
+    
+        @keyframes appear {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .profile {
+            width: 100%;
+            height: 100%;
+            // background-color: red;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+
+            .photo-container {
+                width: 250px;
+                height: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .photo {
+                    width: 170px;
+                    height: 170px;
+                    background-color: black;
+                    position: relative;
+                }
+                .photo-image {
+                    position: absolute;
+                    background-color: white;
+                    width: 170px;
+                    height: 170px;
+                    top: -15px;
+                    right: -15px;
+                    border: 3px solid #ffe3bf;
+                }
+            }
+            .stats-container {
+                width: 250px;
+                height: 600px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .stats {
+                    width: 220px;
+                    height: 570px;
+                    background-color: #5fcfff;
+                    position: relative;
+                }
+                .stats-block {
+                    position: absolute;
+                    background-color: black;
+                    color: white;
+                    width: 220px;
+                    height: 570px;
+                    top: -15px;
+                    right: -15px;
+                    border: 3px solid #ffe3bf;
+                }
+            }
+            .completion-chart-container {
+                width: 250px;
+                height: 800px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .completion-chart {
+                    width: 220px;
+                    height: 770px;
+                    background-color: #5fcfff;
+                    position: relative;
+
+                    .chart {
+                        position: absolute;
+                        background-color: black;
+                        color: white;
+                        width: 220px;
+                        height: 770px;
+                        top: -15px;
+                        right: -15px;
+                        border: 3px solid #ffe3bf;
+                    }
+                }
+            }
+        }
+    }
+}

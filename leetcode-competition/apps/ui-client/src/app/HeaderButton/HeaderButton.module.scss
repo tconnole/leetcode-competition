@@ -1,0 +1,58 @@
+/*
+ * Replace this with your own classes
+ *
+ * e.g.
+ * .container {
+ * }
+*/
+$button-width: 126px;
+$button-height: 34px;
+$button-width-small: 50px;
+$button-height-small: 50px;
+
+.container, .small-container {
+    position: relative;
+    width: $button-width;
+    height: $button-height;
+    border-radius: 25px;
+    background-color: black;
+    border: 3px black solid;
+    transition: all 0.05s linear;
+
+    .label-container, .label-container-selected {
+        transition: all 0.05s linear;
+        position: absolute;
+        width: $button-width;
+        height: $button-height;
+        border-radius: 25px;
+        border: 3px black solid;
+        background-color: white;
+        color: black;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        top: -10px;
+        right: -10px;
+        font-family: myriad-pro, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    .label-container-selected {
+        top: -3px;
+        right: -3px;
+    }
+}
+
+.small-container {
+    width: $button-width-small;
+    height: $button-height-small;
+    border-radius: 50%;
+
+    .label-container, .label-container-selected {
+        width: $button-width-small;
+        height: $button-height-small;
+        border-radius: 50%;
+    }
+}
