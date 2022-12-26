@@ -76,6 +76,21 @@ export function App() {
     }
   }
 
+  const shadowColor = (): string => {
+    switch(tab()) {
+      case 'overview':
+        return tan;
+      case 'problems':
+        return black;
+      case 'submit':
+        return blue;
+      case 'about':
+        return pink;
+      default:
+        return ''
+    }
+  }
+
   const dark = (tab() === 'submit');
 
   return (
@@ -143,6 +158,7 @@ export function App() {
         <div className={styles['body']}>
           <Outlet />
         </div>
+        {/* <div className={styles['top-shadow']} style={{background: `linear-gradient(${shadowColor()}, #00000000)`}}></div> */}
       </div>
     </div>
   );

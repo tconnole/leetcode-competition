@@ -1,6 +1,6 @@
 export function OverviewIcon(color: string) {
   const cls1 = {fill: 'none', stroke: color, strokeMiterLimit: '10', strokeWidth: '8px'};
-  const cls2 = {stroke: color, strokeMiterLimit: '10', strokeWidth: '8px'};
+  const cls2 = {fill: color, stroke: color, strokeMiterLimit: '10', strokeWidth: '8px'};
 
     return (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 131.12 131.12">
   <g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1">
@@ -49,6 +49,6 @@ export function SubmitIcon(color: string) {
 
 export function AboutIcon(color: string) {
   const cls1 = {fill: 'none', stroke: color, strokeMiterLimit: '10', strokeWidth: '8px'};
-  const cls2 = {stroke: color, strokeMiterLimit: '10', strokeWidth: '8px'}
+  const cls2 = {fill: color, stroke: color, strokeMiterLimit: '10', strokeWidth: '8px'}
   return (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.7 107.51"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path style={cls1} d="M12.74,76.39h0A34.21,34.21,0,0,1,47,110.6v0a0,0,0,0,1,0,0h0A34.21,34.21,0,0,1,12.74,76.39v0A0,0,0,0,1,12.74,76.39Z" transform="translate(-57.37 48.49) rotate(-45)"/><circle style={cls2} cx="25.57" cy="89.04" r="4.96"/><path style={cls2} d="M25.27,4h7.62a4.72,4.72,0,0,1,4.72,4.72V57.31A7.69,7.69,0,0,1,29.92,65h0a8.31,8.31,0,0,1-8.31-8.31v-49A3.66,3.66,0,0,1,25.27,4Z"/></g></g></svg>);
 }

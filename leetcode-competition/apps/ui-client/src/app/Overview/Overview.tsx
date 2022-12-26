@@ -50,7 +50,7 @@ export function Overview(props: OverviewProps) {
           <div className={styles['stats-container']}>
             <div className={styles['stats']}>
               <div className={styles['stats-block']}>
-                stats
+                statistics
               </div>
             </div>
           </div>
